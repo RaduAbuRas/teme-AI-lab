@@ -35,6 +35,12 @@ alternativ(L,[],L).
 alternativ([X|L1],[Y|L2],[X,Y|ListaRez]):-
 alternativ(L1,L2,ListaRez).
 
+/** <examples>
+?- alternativ([1, 2, 3], [4, 5, 6], L).
+?- alternativ([a,b,c,d,e], [1, 2, 3],L).
+*/
+
+
 
 8.
 stanga(st).
