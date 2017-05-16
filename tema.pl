@@ -49,8 +49,16 @@ even_odd([], [], []).
 even_odd([H|T], [H|Even1], Odd) :-
     length([H|T], X),
     0 is X mod 2,
-    even_odd(T, Even1, Odd).
+    even_odd(T, Even1, Odd),
+    !.
 even_odd([H|T], Even, [H|Odd1]) :-
     length([H|T], X),
     1 is X mod 2,
-    even_odd(T, Even, Odd1).
+    even_odd(T, Even, Odd1),
+    !.
+
+/** <examples>
+?- even_odd([1,2,3,4,5],L2,L3).
+?- even_odd([a,b,c,d,e,f],L2,L3).
+?- even_odd([1],L2,L3).
+*/
