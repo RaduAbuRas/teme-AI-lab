@@ -3,6 +3,15 @@ sublist(X,Y):-append(X,_,Y).
 sublist(X,Y):-append(_,X,Y).
 sublist(X,Y):-append(X,_,Z),append(_,Z,Y).
 
+
+
+7.
+alternativ([],L,L).
+alternativ(L,[],L).
+alternativ([X|L1],[Y|L2],[X,Y|ListaRez]):-
+alternativ(L1,L2,ListaRez).
+
+
 8.
 stanga(st).
 dreapta(dr).
