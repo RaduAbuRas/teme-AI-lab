@@ -50,10 +50,15 @@ rotiredr(L, R) :-rotirest(R, L).
 rotire(Lista,_,0,Lista).
 rotire(Lista,Directie,Nr,ListaRez):-
     stanga(Directie),
-	rotirest(Lista,L),Nr1 is Nr-1,rotire(L,st,Nr1,ListaRez).
+	rotirest(Lista,L),
+	Nr1 is Nr-1,
+	rotire(L,st,Nr1,ListaRez).
+	
 rotire(Lista,Directie,Nr,ListaRez):-
     dreapta(Directie),
-	rotiredr(Lista,L),Nr1 is Nr-1,rotire(L,dr,Nr1,ListaRez).
+	rotiredr(Lista,L),
+	Nr1 is Nr-1,
+	rotire(L,dr,Nr1,ListaRez).
 
 12.
 even_odd([], [], []).
