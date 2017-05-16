@@ -3,6 +3,11 @@ sublist(X,Y):-append(X,_,Y).
 sublist(X,Y):-append(_,X,Y).
 sublist(X,Y):-append(X,_,Z),append(_,Z,Y).
 
+/** <examples>
+?- sublist([c, d, e], [a, b, c, d, e, f]).
+?- sublist([b, c, e], [a, b, c, d, e, f]).
+*/
+
 4.
 factor(1,_,[]).
 factor(N, F, [F|Lista]):-
