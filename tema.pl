@@ -4,18 +4,25 @@ sublist(X,Y):-append(_,X,Y).
 sublist(X,Y):-append(X,_,Z),append(_,Z,Y).
 
 4.
-%  descomp(N, Lista)
-%  factp(N, Lista, Divizor).
-
-descomp(N, L) :- factp(N, L, 2). %orice numar are 2 divizori (1 si pe el insusi).
- factp(1, [ ], _ ). %cazul de baza
-factp(N, [Divizor | Lista], Divizor) :-
-N > 1, 0 is N mod Divizor, N1 is N // Divizor,
-factp(N1, Lista, Divizor). %este cazul cand numarul se imparte exact iar restul este 0
-factp(N,Lista,Divizor) :-
- N > 1, not(0 is N mod Divizor), D1 is Divizor + 1,
- factp(N, Lista, D1).%este cazul cand numarul nu se imparte exact la 0, se va incrementa pentru a verifica in continuare
-
+factor(1,_,[]).
+factor(N, F, [F|Lista]):-
+    0 is mod(N,F),
+    N1 is N/F,
+    factor(N1, F, Lista),
+    !.
+factor(N, F, Lista):-
+    F1 is F+1,
+    factor(N, F1, Lista),
+    !.
+descomp(N, Lista):-
+    F is 2,
+    factor(N, F, Lista),
+    !.
+/** <examples>
+?- descomp(10, L).
+?- descomp(100, L).
+?- descomp(102, L).
+*/
 
 7.
 alternativ([],L,L).
