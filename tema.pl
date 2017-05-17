@@ -26,7 +26,7 @@ descomp(N, Lista):-
 /** <examples>
 ?- descomp(10, L).
 ?- descomp(100, L).
-?- descomp(102, L).
+?- descomp(25, L).
 */
 
 7.
