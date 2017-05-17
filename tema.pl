@@ -59,6 +59,11 @@ rotire(Lista,Directie,Nr,ListaRez):-
 	rotiredr(Lista,L),
 	Nr1 is Nr-1,
 	rotire(L,dr,Nr1,ListaRez).
+	
+/** <examples>
+?- rotire([1,2,3,4,5],dr,3,L2).
+?- rotire([a,b,c,d,e,f] , st, 5 , L2).
+*/
 
 12.
 even_odd([], [], []).
